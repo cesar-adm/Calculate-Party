@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<head>
+  <style>
+    h1{
+      margin-left: 50px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+<header id="cabecario">
+<h1> Calculate Party <img style="width: 40px;" src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Bal%C3%A3o-Anivers%C3%A1rio-PNG-563x1024.png" alt=""></h1> 
+</header>
+
+<div class="box">
+  <p id="convidados">CONVIDADOS </p>
   </div>
-</ion-content>
+
+<main>
+
+<div class="boxbutton"> 
+  <label style="margin-right:38px;">Adulto</label>
+  <ion-button (click)="removerAdulto()">-</ion-button>
+  <input type="number"[(ngModel)]="quantidadeAdulto" (keyup)=" this.calcularTotalBolo(); this.calcularTotalRefri(); this.calcularTotalSalgado();">
+<ion-button  (click)="adicionarAdulto()">+</ion-button>
+</div>
+
+
+<div class="boxbutton"> 
+<label>Crianças</label>
+<ion-button (click)="removerCrianca()">-</ion-button>
+<input type="number"[(ngModel)]="quantidadeCrianca" (keyup)=" this.calcularTotalBolo(); this.calcularTotalRefri(); this.calcularTotalSalgado();">
+  <ion-button (click)="adicionarCrianca()">+</ion-button>
+</div>
+
+
+<div id="total">
+<p>TOTAL:</p>
+<div class="resultado"><p>Salgados (un): {{quantidadeSalgado}}</p></div>
+<div class="resultado"><p>Refri (ml): {{quantidadeRefri}}</p></div>
+<div class="resultado"><p>Bolo (g): {{quantidadeBolo}}</p></div>
+</div>
+
+<footer id="rodape">
+</footer>
+</main>
